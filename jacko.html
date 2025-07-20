@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jacko Flooring | 实木地板专家</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Monoton&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --primary-yellow: #EBA13B;
+    --primary-yellow-dark: #8B4513;
+    --primary-yellow-light: #FFD985;
+    --gold-cream: #FFE7AF;
+    --gold-white: #FFF3D4;
+
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+    --charcoal: #312A1E;
+    --background-dark: #111111;
+
+    --accent-rust: #D97950;
+    --accent-teal: #3A8D8D;
+    --accent-green: #6B8E23;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Josefin Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    background: var(--background-dark);
+    color: var(--text-light);
+  }
+
+  h2{
+    font-family: "Monoton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  header {
+      background: rgb(0 0 0 / 85%);
+      color: #000;
+      text-align: center;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: calc(100% - 40px);
+      z-index: 1000;
+  }
+
+  .language-switch a {
+    font-size: 1rem; 
+    color: #9d8f8f;
+  }
+
+  header img {
+    height: 72px;
+  }
+
+  nav {
+    background: var(--charcoal);
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  nav a {
+    color: var(--primary-yellow);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .hero-carousel-wrapper {
+    position: relative;
+    height: 800px;
+    overflow: hidden;
+  }
+
+  .hero-carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .hero-carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-yellow);
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero-overlay h2 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    font-family: "Monoton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--primary-yellow-light);
+    word-spacing: 1.5rem;
+  }
+
+  .hero-overlay p {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .btn-yellow {
+    background: var(--primary-yellow);
+    color: var(--charcoal);
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .services, .about, .testimonials {
+    background: var(--charcoal);
+  }
+
+  h2 {
+    color: var(--primary-yellow);
+    margin-bottom: 20px;
+  }
+
+  .section-block {
+    max-width: 1000px;
+    margin: 0 auto;
+    color: var(--gold-white);
+  }
+
+  .section-block p {
+    margin-bottom: 15px;
+  }
+
+  footer {
+    background: var(--background-dark);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  footer p {
+    margin: 5px 0;
+  }
+
+  footer .qr img {
+    height: 100px;
+    margin: 10px;
+  }
+
+  .lang-en, .lang-zh {
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    .hero-overlay h2 {
+      font-size: 1.8rem;
+    }
+
+    .hero-overlay p {
+      font-size: 1rem;
+    }
+
+    .hero-carousel-wrapper {
+      height: 300px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <img src="./images/Logo/logo-white.svg" alt="Jacko Flooring Logo">
+    <!-- <p>
+      <span class="lang-en">Craftsmanship You Can Stand On</span>
+      <span class="lang-zh">精湛工艺，值得信赖</span>
+    </p> -->
+    <div class="language-switch">
+      <a href="#" onclick="setLanguage('en')">English</a> |
+      <a href="#" onclick="setLanguage('zh')">中文</a>
+    </div>
+  </header>
+
+  <!-- <nav>
+    <a href="#hero"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+    <a href="#services"><span class="lang-en">Services</span><span class="lang-zh">服务</span></a>
+    <a href="#about"><span class="lang-en">About</span><span class="lang-zh">关于</span></a>
+    <a href="#testimonials"><span class="lang-en">Testimonials</span><span class="lang-zh">客户评价</span></a>
+    <a href="#contact"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></a>
+  </nav> -->
+
+  <section class="hero-carousel-wrapper" id="hero">
+    <img src="./images/1.png" class="hero-carousel-slide active" alt="Slide 1">
+    <img src="./images/2.png" class="hero-carousel-slide" alt="Slide 2">
+    <img src="./images/3.jpg" class="hero-carousel-slide" alt="Slide 3">
+    <img src="./images/6.jpg" class="hero-carousel-slide" alt="Slide 3">
+
+    <div class="hero-overlay">
+      <h2>
+        <span class="lang-en">Beautiful Floors Start Here</span>
+        <span class="lang-zh">美丽地板，从这里开始</span>
+      </h2>
+      <p>
+        <span class="lang-en">Your trusted partner in premium hardwood flooring</span>
+        <span class="lang-zh">您值得信赖的实木地板专家</span>
+      </p>
+      <a href="#contact" class="btn-yellow">
+        <span class="lang-en">Get a Free Quote</span>
+        <span class="lang-zh">获取免费报价</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <h2>
+      <span class="lang-en">Our Services</span>
+      <span class="lang-zh">我们的服务</span>
+    </h2>
+    <div class="section-block">
+      <p><strong><span class="lang-en">Installation:</span> <span class="lang-zh">安装：</span></strong>
+        <span class="lang-en">Expert hardwood and engineered wood installation.</span>
+        <span class="lang-zh">专业实木与复合地板安装服务。</span>
+      </p>
+      <p><strong><span class="lang-en">Refinishing:</span> <span class="lang-zh">翻新：</span></strong>
+        <span class="lang-en">Sanding and staining to renew your floor’s natural beauty.</span>
+        <span class="lang-zh">打磨与染色，焕发地板自然光彩。</span>
+      </p>
+      <p><strong><span class="lang-en">Repairs:</span> <span class="lang-zh">维修：</span></strong>
+        <span class="lang-en">Fixing scratches, dents, and damage.</span>
+        <span class="lang-zh">修复刮痕、凹陷和其他损伤。</span>
+      </p>
+      <p><strong><span class="lang-en">Maintenance:</span> <span class="lang-zh">保养：</span></strong>
+        <span class="lang-en">Long-term care to protect your investment.</span>
+        <span class="lang-zh">提供长期保养服务，延长使用寿命。</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- <section class="about" id="about">
+    <h2>
+      <span class="lang-en">About Us</span>
+      <span class="lang-zh">关于我们</span>
+    </h2>
+    <div class="section-block">
+      <p>
+        <span class="lang-en">We are a Melbourne-based, family-owned company with 20+ years of flooring expertise.</span>
+        <span class="lang-zh">我们是总部位于墨尔本的家族企业，拥有超过20年的地板经验。</span>
+      </p>
+      <p>
+        <span class="lang-en">Our mission is to deliver stunning hardwood floors with precision and pride.</span>
+        <span class="lang-zh">我们的使命是以专业与自豪感为您打造惊艳的实木地板。</span>
+      </p>
+    </div>
+  </section> -->
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.7262022382206!2d145.1386382396475!3d-37.8198816988065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad63f55e429c6b9%3A0xf9eea60cb3127b5b!2s2-4%20Whitehorse%20Rd%2C%20Blackburn%20VIC%203130!5e0!3m2!1sen!2sau!4v1752747650478!5m2!1sen!2sau" width="100%" height="450" style="border:0; filter: grayscale(100%) brightness(80%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <footer id="contact">
+    <h2>
+      <span class="lang-en">Contact Us</span>
+      <span class="lang-zh">联系我们</span>
+    </h2>
+    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px;">
+      <p>Email: contact@jackoflooring.com.au</p>
+      <p>Phone:  0416851818</p>
+      <p>
+        <span class="lang-en">Address: shop 2 2/4 Whitehorse Rd, Blackburn VIC 3130</span><br>
+        <span class="lang-zh">地址：shop 2 2/4 Whitehorse Rd, Blackburn VIC 3130</span>
+      </p>
+    </div>
+    <!-- <p>
+      <span class="lang-en">WeChat: james0416851818</span><br>
+      <span class="lang-zh">微信号：james0416851818</span>
+    </p>
+    <p>
+      <span class="lang-en">Xiaohongshu: @JackoFlooring</span><br>
+      <span class="lang-zh">小红书：@JackoFlooring</span>
+    </p>
+
+    <div style="margin: 20px 0;">
+      <img src="https://via.placeholder.com/100?text=WeChat+QR" alt="WeChat QR">
+      <img src="https://via.placeholder.com/100?text=XHS+QR" alt="Xiaohongshu QR">
+    </div>
+
+    <p style="font-size: 0.9em; color: #ccc;">
+      <span class="lang-en">Scan the QR codes to connect via WeChat or Xiaohongshu.</span>
+      <span class="lang-zh">扫码加微信或关注我们的小红书获取更多信息。</span>
+    </p>
+    <p>&copy; 2025 Jacko Flooring</p> -->
+  </footer>
+
+  <!-- Carousel Script -->
+  <script>
+    const heroSlides = document.querySelectorAll(".hero-carousel-slide");
+    let heroCurrent = 0;
+
+    setInterval(() => {
+      heroSlides[heroCurrent].classList.remove("active");
+      heroCurrent = (heroCurrent + 1) % heroSlides.length;
+      heroSlides[heroCurrent].classList.add("active");
+    }, 5000);
+  </script>
+
+  <!-- Language Switch Script -->
+  <script>
+    function setLanguage(lang) {
+      const en = document.querySelectorAll('.lang-en');
+      const zh = document.querySelectorAll('.lang-zh');
+
+      en.forEach(el => el.style.display = (lang === 'en' ? 'inline' : 'none'));
+      zh.forEach(el => el.style.display = (lang === 'zh' ? 'inline' : 'none'));
+
+      localStorage.setItem('siteLang', lang);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('siteLang') || 'en';
+      setLanguage(savedLang);
+    });
+  </script>
+
+</body>
+</html>
