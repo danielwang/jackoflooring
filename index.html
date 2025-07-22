@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jacko Flooring | 实木地板专家</title>
+  <title>Jacko Flooring | 墨尔本地板专家</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#FFFFFF">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Monoton&display=swap" rel="stylesheet">
@@ -40,7 +45,11 @@
     font-family: "Monoton", sans-serif;
     font-weight: 400;
     font-style: normal;
+    word-spacing: 1.5rem;
+    color: var(--primary-yellow-light);
+
   }
+
   header {
       background: rgb(0 0 0 / 85%);
       color: #000;
@@ -112,17 +121,11 @@
     color: var(--primary-yellow);
     z-index: 2;
     text-align: center;
-    padding: 20px;
   }
 
   .hero-overlay h2 {
     font-size: 3.5rem;
     margin-bottom: 10px;
-    font-family: "Monoton", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: var(--primary-yellow-light);
-    word-spacing: 1.5rem;
   }
 
   .hero-overlay p {
@@ -149,19 +152,15 @@
     background: var(--charcoal);
   }
 
-  h2 {
-    color: var(--primary-yellow);
-    margin-bottom: 20px;
-  }
-
   .section-block {
-    max-width: 1000px;
+    max-width: 768px;
     margin: 0 auto;
     color: var(--gold-white);
   }
 
   .section-block p {
     margin-bottom: 15px;
+    text-align: left;
   }
 
   footer {
@@ -185,23 +184,22 @@
   }
 
   @media (max-width: 600px) {
+    .logo{
+      width: 220px;
+    }
     .hero-overlay h2 {
-      font-size: 1.8rem;
+      font-size: 3.5rem;
     }
 
     .hero-overlay p {
-      font-size: 1rem;
-    }
-
-    .hero-carousel-wrapper {
-      height: 300px;
+      font-size: 1.25rem;
     }
   }
 </style>
 </head>
 <body>
   <header>
-    <img src="./images/Logo/logo-white.svg" alt="Jacko Flooring Logo">
+    <img class="logo" src="./images/Logo/logo-white.svg" alt="Jacko Flooring Logo">
     <!-- <p>
       <span class="lang-en">Craftsmanship You Can Stand On</span>
       <span class="lang-zh">精湛工艺，值得信赖</span>
@@ -248,19 +246,19 @@
       <span class="lang-zh">我们的服务</span>
     </h2>
     <div class="section-block">
-      <p><strong><span class="lang-en">Installation:</span> <span class="lang-zh">安装：</span></strong>
+      <p><img src="images/icon-floor-tile.png" width="24"/> <strong><span class="lang-en">Installation:</span> <span class="lang-zh">安装：</span></strong>
         <span class="lang-en">Expert hardwood and engineered wood installation.</span>
         <span class="lang-zh">专业实木与复合地板安装服务。</span>
       </p>
-      <p><strong><span class="lang-en">Refinishing:</span> <span class="lang-zh">翻新：</span></strong>
+      <p><img src="images/icon-floor-tile.png" width="24"/> <strong><span class="lang-en">Refinishing:</span> <span class="lang-zh">翻新：</span></strong>
         <span class="lang-en">Sanding and staining to renew your floor’s natural beauty.</span>
         <span class="lang-zh">打磨与染色，焕发地板自然光彩。</span>
       </p>
-      <p><strong><span class="lang-en">Repairs:</span> <span class="lang-zh">维修：</span></strong>
+      <p><img src="images/icon-floor-tile.png" width="24"/> <strong><span class="lang-en">Repairs:</span> <span class="lang-zh">维修：</span></strong>
         <span class="lang-en">Fixing scratches, dents, and damage.</span>
         <span class="lang-zh">修复刮痕、凹陷和其他损伤。</span>
       </p>
-      <p><strong><span class="lang-en">Maintenance:</span> <span class="lang-zh">保养：</span></strong>
+      <p><img src="images/icon-floor-tile.png" width="24"/>  <strong><span class="lang-en">Maintenance:</span> <span class="lang-zh">保养：</span></strong>
         <span class="lang-en">Long-term care to protect your investment.</span>
         <span class="lang-zh">提供长期保养服务，延长使用寿命。</span>
       </p>
@@ -289,10 +287,10 @@
       <span class="lang-en">Contact Us</span>
       <span class="lang-zh">联系我们</span>
     </h2>
-    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px;">
-      <p>Email: contact@jackoflooring.com.au</p>
-      <p>Phone:  0416851818</p>
-      <p>
+    <div class="section-block">
+      <p><img width="24" src="images/icon-envelope.png" /> Email:  info@jackoflooring.com.au</p>
+      <p><img width="24" src="images/icon-phone.png" /> Phone:  0416851818</p>
+      <p><img width="24" src="images/icon-marker.png" />
         <span class="lang-en">Address: shop 2 2/4 Whitehorse Rd, Blackburn VIC 3130</span><br>
         <span class="lang-zh">地址：shop 2 2/4 Whitehorse Rd, Blackburn VIC 3130</span>
       </p>
